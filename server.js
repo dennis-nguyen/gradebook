@@ -28,8 +28,8 @@ app.use(express.static("public"));
 // -------------------------------------------------
 
 // MongoDB Configuration
-//mongoose.connect('mongodb://heroku_t2gfv3zf:uen6eu649kst00g6u8kpjc2430@ds151202.mlab.com:51202/heroku_t2gfv3zf'); //Deployed
-mongoose.connect('mongodb://localhost/SGT'); //Local
+mongoose.connect('mongodb://heroku_l315xkbq:mc71a41oua7d6d13j9rmjjpn59@ds135252.mlab.com:35252/heroku_l315xkbq'); //Deployed
+// mongoose.connect('mongodb://localhost/SGT'); //Local
 const db = mongoose.connection;
 
 db.on("error", function (err) {

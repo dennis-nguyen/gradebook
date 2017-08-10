@@ -1,0 +1,32 @@
+body {
+  background-color: #f9fbff;
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  color: #375A7F !important;
+}
+
+.panel-heading {
+  font-family: 'Roboto Slab', serif;
+}
+
+.panel-title {
+  font-family: 'Bitter', serif;
+}
+.panel-default{
+    background: transparent;
+}
+
+.panel-default .panel-body{
+   background:  rgba(46, 51, 56, 0.4);
+}
+
+.studentPanel {
+  overflow-y: auto;
+  max-height: 715px;
+}
+
+.content {
+  margin-top: 80px;
+}

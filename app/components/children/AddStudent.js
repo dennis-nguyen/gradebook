@@ -27,7 +27,9 @@ class AddStudent extends Component {
     if(this.props.studentList.indexOf(name) == -1) {
       helpers.addStudent(name).then((data) => {
         this.props.obtainStudent(name);
-        this.refs.inputName.value="";
+        this.setState({
+          name: ""
+        });
       });
     } else {
       this.props.showAlert();
@@ -52,6 +54,7 @@ class AddStudent extends Component {
                       name="name"
                       ref="inputName"
                       onChange={this.handleChange}
+                      value={this.state.name}
                       placeholder="Example: John Smith"
                       required/>
                     <br/>

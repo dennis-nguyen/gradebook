@@ -37,6 +37,11 @@ class AddGrade extends Component {
       console.log(studentGrade)
       helpers.addGrades(studentGrade).then((data) => {
         this.props.obtainGrades();
+        this.setState({
+          grade: "",
+          assignment: "",
+          possible: ""
+        });
       });
     }
   }
@@ -68,18 +73,21 @@ class AddGrade extends Component {
                 <input type="text" className="form-control text-center"
                 name="assignment"
                 onChange={this.handleChange}
+                value={this.state.assignment}
                 placeholder="Example: Project 2"
                 required/>
                 <h4 className="text-center">Student Grade</h4>
                 <input type="Number" className="form-control text-center"
                 name="grade"
                 onChange={this.handleChange}
+                value={this.state.grade}
                 placeholder="Example: 92"
                 required/>
                 <h4 className="text-center">Possible Max Grade</h4>
                 <input type="Number" className="form-control text-center"
                 name="possible"
                 onChange={this.handleChange}
+                value={this.state.possible}
                 placeholder="Example: 100"
                 required/>
                 <br/>

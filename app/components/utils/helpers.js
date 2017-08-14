@@ -25,6 +25,10 @@ let helper = {
   addGrades: function (grade) {
     return axios.post("/grades", grade);
   },
+  // UPDATE GRADES IN DB
+  updateGrades: function (grade) {
+    return axios.post("/update", grade);
+  },
   // DELETES GRADES FROM DB
   deleteGrade: function (ID) {
     return axios({

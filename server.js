@@ -61,7 +61,7 @@ app.get("/students", function (req, res) {
 
 });
 
-// Get route to query the notes
+// Get route to query the grades
 app.get("/grades", function (req, res) {
   console.log("get grades call")
   Grades.find({}).exec(function (err, doc) {
@@ -89,7 +89,7 @@ app.post("/students", function (req, res) {
   });
 });
 
-// Post route to save notes
+// Post route to save grades
 app.post("/grades", function (req, res) {
   Grades.create(req.body, function (err) {
     if (err) {
@@ -98,6 +98,24 @@ app.post("/grades", function (req, res) {
       res.send("Saved Grades");
     }
   });
+});
+
+// Post route to update grades
+app.post("/update", function (req, res) {
+  updatedGrade = {
+    assignment: req.body.assignment,
+    grade: req.body.grade,
+    possible: req.body.possible
+  };
+  Grades.findOneAndUpdate({_id: req.body.id}, updatedGrade, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Updated Grades");
+    }
+  });
+  console.log(req.body.id);
+  console.log(updatedGrade);
 });
 
 // Delete route for students
@@ -124,7 +142,7 @@ app.delete("/students", function (req, res) {
 
 });
 
-// Delete route for notes
+// Delete route for grades
 app.delete("/grades", function (req, res) {
   console.log(req.body);
   Grades.remove({

@@ -31,7 +31,7 @@ class SavedItem extends Component {
     if(this.props.grades) {
       savedGrades = this.props.grades.map((data,i) => {
           return (
-          <SavedGrades key={i} index={i} grades={data} obtainGrades={this.props.obtainGrades}/>
+          <SavedGrades key={i} index={i} grades={data} obtainGrades={this.props.obtainGrades} student={this.props.student}/>
         );
       });
     }
@@ -53,6 +53,7 @@ class SavedItem extends Component {
                         <th>Score</th>
                         <th>Max Possible Score</th>
                         <th>Percentage</th>
+                        <th>Update</th>
                         <th>Remove</th>
                       </tr>
                     </thead>

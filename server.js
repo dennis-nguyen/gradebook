@@ -114,14 +114,10 @@ app.post("/update", function (req, res) {
       res.send("Updated Grades");
     }
   });
-  console.log(req.body.id);
-  console.log(updatedGrade);
 });
 
 // Delete route for students
 app.delete("/students", function (req, res) {
-  console.log(req.body);
-  console.log("delete works")
   Students.remove(req.body, function (err) {
     if (err) {
       return handleError(err);
@@ -144,7 +140,6 @@ app.delete("/students", function (req, res) {
 
 // Delete route for grades
 app.delete("/grades", function (req, res) {
-  console.log(req.body);
   Grades.remove({
     _id: req.body
   }, function (err) {

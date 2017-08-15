@@ -40,30 +40,30 @@ class AddStudent extends Component {
   render() {
     return (
       <div className="Search col-lg-12">
-            <div className="panel panel-default">
-              <div className="panel-heading">
-                <h3 className="panel-title text-center">Add Student</h3>
-              </div>
-              <div className="panel-body">
-                <form onSubmit={this.studentSubmit}> 
-                  <div className="form-group">
-                    <h4 className="text-center">Name</h4>
-                    <input
-                      type="text"
-                      className="form-control text-center"
-                      name="name"
-                      ref="inputName"
-                      onChange={this.handleChange}
-                      value={this.state.name}
-                      placeholder="Example: John Smith"
-                      required/>
-                    <br/>
-                      <AddButton />
-                  </div>
-                </form>
-              </div>
-            </div>
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title text-center">Add Student</h3>
           </div>
+          <div className="panel-body">
+            <form onSubmit={this.studentSubmit}> 
+              <div className="form-group">
+                <h4 className="text-center">Name</h4>
+                <input
+                  type="text"
+                  className="form-control text-center"
+                  name="name"
+                  ref="inputName"
+                  onChange={this.handleChange}
+                  value={this.state.name}
+                  placeholder="Example: John Smith"
+                  required/>
+                <br/>
+                  <AddButton />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }
